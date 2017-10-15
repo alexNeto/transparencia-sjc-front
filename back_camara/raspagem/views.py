@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.http import JsonResponse
 
 
 def index(request):
-    template = loader.get_template('index/index.htm')
-    context = {
-        'latest_question_list': "latest_question_list",
+    to_json = {
+        "key1": "value1",
+        "key2": "value2"
     }
-    return HttpResponse(template.render(context, request))
+    return JsonResponse(to_json)
