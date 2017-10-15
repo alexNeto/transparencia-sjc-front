@@ -9,8 +9,9 @@ class Raspagem:
             "http://portal.camarasjc.sp.gov.br:8080/"
             "cmsjc/websis/portal_transparencia/financeiro/contas_publicas/"
             "index.php?consulta=../lei_acesso/lai_remuneracoes")
-        self.bsObj = BeautifulSoup(html, "html.parser")
-        self.nameList = bsObj.findAll("tr")
+        self.bsObj = BeautifulSoup(self.html, "html.parser")
+        self.nameList = self.bsObj.findAll("tr")
+        self.data = self.bsObj.find("h5")
 
     def cabecalho(self):
         titulo = ["Nome do Servidor",
@@ -31,11 +32,15 @@ class Raspagem:
         return titulo
 
     def raspatodos(self):
+
         titulo = self.cabecalho()
-        for name in nameList:
+        for name in self.nameList:
             x = 0
             print()
             for n in name:
                 if "" not in n:
                     print(titulo[x], ": ", n.getText())
                     x = x + 1
+
+    def pegadata(self):
+        print(self.data.getText())
