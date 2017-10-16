@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TodosdadosComponent } from './todosdados/todosdados.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-     HttpClientModule
+    TodosdadosComponent
   ],
   imports: [
     BrowserModule

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { PegatudoService } from './pegatudo.service';
 import { Dados } from './dados';
@@ -11,23 +11,12 @@ import { Dados } from './dados';
   providers: [PegatudoService]
 })
 
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit{
 
-/*
   private req: any;
   title: String = 'Salários SJC';
-  dados: [Dados];
-  constructor(private tudo:PegatudoService){
+  constructor(){
   }
 
-  ngOnInit(){
-    this.req = this.tudo.list().subscribe(data=>{
-      this.dados = data as [Dados];
-    })
-  }
-
-  ngOnDestroy(){
-    this.req.unsubscribe()
-  }
-*/
+  ngOnInit(){ }
 }
