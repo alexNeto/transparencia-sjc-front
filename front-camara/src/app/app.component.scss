@@ -22,3 +22,12 @@ header{
 	padding-top: 0.9em;
   font-family: Muli;
 }
+footer{
+  position: absolute;
+  background-color: $dark1;
+  box-shadow: 0px -3px 5px $dark1;
+  height: 200px;
+  left: 0;
+  right: 0;
+  top: 101%;
+}
