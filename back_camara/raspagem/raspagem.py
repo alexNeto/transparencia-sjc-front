@@ -31,16 +31,44 @@ class Raspagem:
                   ]
         return titulo
 
-    def raspatodos(self):
+    '''
+    raspagem.raspatodos()
+    phonebook = {}
+    phonebook2 = {"key": "value"}
+    for i in range(10):
+        phonebook[i] = phonebook2
+        phonebook["Jack"] = 938377264
+        phonebook["Jill"] = i
+    '''
 
+    def raspatodos(self):
+        dados = {}
         titulo = self.cabecalho()
+        for nome in titulo:
+            individual = {nome: 0}
+        for i in range(10):
+            dados[i] = individual
+            dados["Jack"] = 938377264
+            dados["Jill"] = i
+        return dados
+
+    '''
+        dados = {}
+        titulo = self.cabecalho()
+        i = 0
         for name in self.nameList:
+            individual = {}
             x = 0
-            print()
             for n in name:
                 if "" not in n:
-                    print(titulo[x], ": ", n.getText())
+                    individual[x] = {n.getText()}
                     x = x + 1
+                dados[i] = individual
+                i += 1
+        return dados
+    '''
 
     def pegadata(self):
-        print(self.data.getText())
+        data = self.data.getText()
+        data = data[20:]
+        return data

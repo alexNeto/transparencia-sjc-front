@@ -9,17 +9,7 @@ from raspagem.raspagem import Raspagem
 raspagem = Raspagem()
 
 def index(request):
-    raspagem.raspatodos()
-    phonebook = {}
-    phonebook2 = {"key": "value"}
-    for i in range(10):
-        phonebook[i] = phonebook2
-        phonebook["Jack"] = 938377264
-        phonebook["Jill"] = i
-
-    #print(to_json)
-
-    return JsonResponse(phonebook)
+    return JsonResponse(raspagem.raspatodos())
 
 def data(request):
     data = {}
