@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Dados } from './dados';
-
 
 @Component({
   selector: 'app-root',

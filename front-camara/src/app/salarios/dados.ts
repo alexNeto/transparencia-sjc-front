@@ -1,4 +1,4 @@
-export class Dados {
+export interface Dados {
   nome: String;
   cargo: String;
   salarioBase: number;

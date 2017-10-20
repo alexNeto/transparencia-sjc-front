@@ -1,3 +1,4 @@
+import { Dados } from './dados';
 import { GetSalariosService } from './get-salarios.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalariosComponent implements OnInit {
 
-  dados: any;
+  dadosParcial: any;
+  dados: Dados;
 
   constructor(private getSalarios: GetSalariosService) {
-    this.dados = this.getSalarios.getDados();
+    this.dadosParcial = this.getSalarios.getDados();
+    this.dados = this.dadosParcial;
     console.log(this.dados);
+    console.log(this.dados);
+    console.log(this.dadosParcial);
 
 
    }
