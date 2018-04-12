@@ -7,16 +7,13 @@ import { CommonsService } from './services/commons/commons.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
-
-  logo: String = "";
+  logo: String = '';
   git: String[] = [];
 
-  constructor(private commons: CommonsService) { }
+  constructor(private commons: CommonsService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.logo = this.commons.getLogo();
     this.git = this.commons.getGit();
-    
   }
-
 }
