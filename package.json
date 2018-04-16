@@ -1,5 +1,5 @@
 {
-  "name": "camara-salario-sjc",
+  "name": "transparencia-sjc-front",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -32,7 +32,7 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular/cli": "^1.6.7",
+    "@angular/cli": "^1.7.4",
     "@angular/compiler-cli": "^5.2.9",
     "@angular/language-service": "^5.2.9",
     "@types/jasmine": "~2.8.3",

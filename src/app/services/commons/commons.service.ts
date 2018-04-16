@@ -2,15 +2,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CommonsService {
-
-  constructor() { }
+  constructor() {}
 
   public getLogo() {
-    return "Sem ideias para nome";
+    return 'Sem ideias para nome';
   }
 
   public getGit() {
-    return ["https://github.com/alexNeto/camara-salario-sjc", "/alexNeto"];
+    return ['https://github.com/alexNeto/camara-salario-sjc', '/alexNeto'];
   }
-
 }
