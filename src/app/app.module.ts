@@ -9,13 +9,14 @@ import { CommonsService } from './services/commons/commons.service';
 import { CrawlerService } from './services/crawler/crawler.service';
 import { HomeComponent } from './home/home.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { RemuneracaoCamaraSjcComponent } from './remuneracao-camara-sjc/remuneracao-camara-sjc/remuneracao-camara-sjc.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SideNavComponent],
+  declarations: [AppComponent, HomeComponent, SideNavComponent, RemuneracaoCamaraSjcComponent],
   imports: [
     RouterModule.forRoot(
       appRoutes,
