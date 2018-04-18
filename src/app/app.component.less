@@ -1,8 +1,17 @@
-@import "../stylesheets/colors";
+@import '../stylesheets/colors';
 a {
-    color: @black;
+  color: @black;
+}
+// header,
+main {
+  // footer {
+  padding-left: 300px;
 }
 
-.btn {
-    text-transform: none;
+@media only screen and (max-width: 992px) {
+  // header,
+  main {
+    // footer {
+    padding-left: 0;
+  }
 }

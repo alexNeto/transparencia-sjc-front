@@ -8,13 +8,14 @@ import { AppComponent } from './app.component';
 import { CommonsService } from './services/commons/commons.service';
 import { CrawlerService } from './services/crawler/crawler.service';
 import { HomeComponent } from './home/home.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, SideNavComponent],
   imports: [
     RouterModule.forRoot(
       appRoutes,
