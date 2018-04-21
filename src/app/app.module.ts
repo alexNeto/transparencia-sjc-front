@@ -1,12 +1,21 @@
+/**
+ * Angular Core
+ */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { MaterializeModule } from 'angular2-materialize';
 
-import { AppComponent } from './app.component';
+/**
+ * Seervicos
+ */
+import { TabelaMockService } from './services/mock/tabela-mock.service';
 import { CommonsService } from './services/commons/commons.service';
 import { CrawlerService } from './services/crawler/crawler.service';
+/**
+ * Componentes
+ */
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { RemuneracaoCamaraSjcComponent } from './remuneracao-camara-sjc/remuneracao-camara-sjc/remuneracao-camara-sjc.component';
@@ -24,8 +33,14 @@ const appRoutes: Routes = [
    * Módulo de Remuneracao da Câmara municipal de
    * São José dos Campos
    */
-  { path: 'remuneracao-camara', component: RemuneracaoCamaraSjcComponent },
-  { path: 'remuneracao-camara/tabela-inicial', component: RemuneracaoCamaraSjcTabelaInicialComponent }
+  {
+    path: 'remuneracao-camara',
+    component: RemuneracaoCamaraSjcComponent
+  },
+  {
+    path: 'remuneracao-camara/tabela-inicial',
+    component: RemuneracaoCamaraSjcTabelaInicialComponent
+  }
 ];
 
 @NgModule({
@@ -47,7 +62,7 @@ const appRoutes: Routes = [
     BrowserModule,
     MaterializeModule
   ],
-  providers: [CommonsService, CrawlerService],
+  providers: [CommonsService, CrawlerService, TabelaMockService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

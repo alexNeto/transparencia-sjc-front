@@ -1,3 +1,39 @@
-<p>
-  remuneracao-camara-sjc-tabela-inicial works!
-</p>
+<table responsive-table>
+    <thead>
+      <tr>
+          <th>Nome do Servidor</th>
+          <th>Cargo</th>
+          <th>Salário Base</th>
+          <th>Plano de Carreira	</th>
+          <th>Gratificações	</th>
+          <th>Benefícios	</th>
+          <th>Abono	</th>
+          <th>Adiantamento Salarial	</th>
+          <th>Férias	</th>
+          <th>Décimo Terceiro	</th>
+          <th>Abatimento de Teto	</th>
+          <th>Descontos*	</th>
+          <th>Salário Bruto	</th>
+          <th>Salário Líquido</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let funcionario of funcionarios">
+          <td>{{ funcionario.nome }}</td>
+          <td>{{ funcionario.cargo }}</td>
+          <td>{{ funcionario.salario_base }}</td>
+          <td>{{ funcionario.plano_carreira }}</td>
+          <td>{{ funcionario.gratificacao }}</td>
+          <td>{{ funcionario.beneficio }}</td>
+          <td>{{ funcionario.abono }}</td>
+          <td>{{ funcionario.adiantamento }}</td>
+          <td>{{ funcionario.ferias }}</td>
+          <td>{{ funcionario.decimo_terceiro }}</td>
+          <td>{{ funcionario.abatimento }}</td>
+          <td>{{ funcionario.descontos }}</td>
+          <td>{{ funcionario.salario_bruto }}</td>
+          <td>{{ funcionario.salario_liquido }}</td>
+      </tr>
+    </tbody>
+  </table>
