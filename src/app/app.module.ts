@@ -11,13 +11,14 @@ import { HomeComponent } from './home/home.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { RemuneracaoCamaraSjcComponent } from './remuneracao-camara-sjc/remuneracao-camara-sjc/remuneracao-camara-sjc.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SideNavComponent, RemuneracaoCamaraSjcComponent, HeaderComponent],
+  declarations: [AppComponent, HomeComponent, SideNavComponent, RemuneracaoCamaraSjcComponent, HeaderComponent, FooterComponent],
   imports: [
     RouterModule.forRoot(
       appRoutes,
