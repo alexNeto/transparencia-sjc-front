@@ -13,10 +13,19 @@ import { RemuneracaoCamaraSjcComponent } from './remuneracao-camara-sjc/remunera
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RemuneracaoCardComponent } from './remuneracao-camara-sjc/remuneracao-card/remuneracao-card.component';
+// tslint:disable-next-line:max-line-length
+import { RemuneracaoCamaraSjcTabelaInicialComponent } from './remuneracao-camara-sjc/remuneracao-camara-sjc-modules/remuneracao-camara-sjc-tabela-inicial/remuneracao-camara-sjc-tabela-inicial.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'remuneracao-camara', component: RemuneracaoCamaraSjcComponent }
+
+  /**
+   * Remuneracao Camara
+   * Módulo de Remuneracao da Câmara municipal de
+   * São José dos Campos
+   */
+  { path: 'remuneracao-camara', component: RemuneracaoCamaraSjcComponent },
+  { path: 'remuneracao-camara/tabela-inicial', component: RemuneracaoCamaraSjcTabelaInicialComponent }
 ];
 
 @NgModule({
@@ -24,15 +33,16 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     SideNavComponent,
-    RemuneracaoCamaraSjcComponent,
     HeaderComponent,
     FooterComponent,
-    RemuneracaoCardComponent
+    RemuneracaoCardComponent,
+    RemuneracaoCamaraSjcComponent,
+    RemuneracaoCamaraSjcTabelaInicialComponent
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
+      { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
     MaterializeModule

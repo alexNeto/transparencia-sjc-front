@@ -7,15 +7,17 @@ import { inputRemuneracaoCamara } from '../../services/interfaces/input-remunera
   styleUrls: ['./remuneracao-camara-sjc.component.less']
 })
 export class RemuneracaoCamaraSjcComponent implements OnInit {
-  rawTable: inputRemuneracaoCamara;
+  remuneracaoCamaraTabelaInicial: inputRemuneracaoCamara;
 
   constructor() {
-    this.rawTable = {
+    this.remuneracaoCamaraTabelaInicial = {
       imagem: '../../../assets/images/sample.png',
-      cardTitle: 'Card Title',
-      cardInfo: ' Card Info',
-      linkAddress: '#',
-      linkTitle: 'Link Title'
+      cardTitle: 'Tabela Inicial',
+      cardInfo:
+        'Aqui está a tabela da qual os dados foram analizados. ' +
+        'Todos os dados analizados são públicos e livre para acesso e utilização da população',
+      linkAddress: 'tabela-inicial',
+      linkTitle: 'ver tabela inicial'
     };
   }
 
