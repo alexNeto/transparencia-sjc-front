@@ -10,13 +10,14 @@ import { CrawlerService } from './services/crawler/crawler.service';
 import { HomeComponent } from './home/home.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { RemuneracaoCamaraSjcComponent } from './remuneracao-camara-sjc/remuneracao-camara-sjc/remuneracao-camara-sjc.component';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SideNavComponent, RemuneracaoCamaraSjcComponent],
+  declarations: [AppComponent, HomeComponent, SideNavComponent, RemuneracaoCamaraSjcComponent, HeaderComponent],
   imports: [
     RouterModule.forRoot(
       appRoutes,
