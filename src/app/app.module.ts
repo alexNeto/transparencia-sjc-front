@@ -12,19 +12,31 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { RemuneracaoCamaraSjcComponent } from './remuneracao-camara-sjc/remuneracao-camara-sjc/remuneracao-camara-sjc.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { RemuneracaoCardComponent } from './remuneracao-camara-sjc/remuneracao-card/remuneracao-card.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: 'remuneracao-camara', component: RemuneracaoCamaraSjcComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SideNavComponent, RemuneracaoCamaraSjcComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    SideNavComponent,
+    RemuneracaoCamaraSjcComponent,
+    HeaderComponent,
+    FooterComponent,
+    RemuneracaoCardComponent
+  ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
-  BrowserModule, MaterializeModule],
+    BrowserModule,
+    MaterializeModule
+  ],
   providers: [CommonsService, CrawlerService],
   bootstrap: [AppComponent]
 })
