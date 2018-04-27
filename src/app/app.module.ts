@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterializeModule } from 'angular2-materialize';
+import { HttpModule } from '@angular/http';
 
 /**
  * Seervicos
@@ -18,29 +19,15 @@ import { CrawlerService } from './services/crawler/crawler.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { RemuneracaoCamaraSjcComponent } from './remuneracao-camara-sjc/remuneracao-camara-sjc/remuneracao-camara-sjc.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { RemuneracaoCardComponent } from './remuneracao-camara-sjc/remuneracao-card/remuneracao-card.component';
-// tslint:disable-next-line:max-line-length
-import { RemuneracaoCamaraSjcTabelaInicialComponent } from './remuneracao-camara-sjc/remuneracao-camara-sjc-modules/remuneracao-camara-sjc-tabela-inicial/remuneracao-camara-sjc-tabela-inicial.component';
+/**
+ *  Modules
+ */
+import { RemuneracaoCamaraSjcModule } from './remuneracao-camara-sjc/remuneracao-camara-sjc.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-
-  /**
-   * Remuneracao Camara
-   * Módulo de Remuneracao da Câmara municipal de
-   * São José dos Campos
-   */
-  {
-    path: 'remuneracao-camara',
-    component: RemuneracaoCamaraSjcComponent
-  },
-  {
-    path: 'remuneracao-camara/tabela-inicial',
-    component: RemuneracaoCamaraSjcTabelaInicialComponent
-  }
 ];
 
 @NgModule({
@@ -49,16 +36,21 @@ const appRoutes: Routes = [
     HomeComponent,
     SideNavComponent,
     HeaderComponent,
-    FooterComponent,
-    RemuneracaoCardComponent,
-    RemuneracaoCamaraSjcComponent,
-    RemuneracaoCamaraSjcTabelaInicialComponent
+    FooterComponent
   ],
   imports: [
+    /**
+     * Módulos internos
+     */
+    RemuneracaoCamaraSjcModule,
+    /**
+     * Módulos externos
+     */
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    HttpModule,
     BrowserModule,
     MaterializeModule
   ],
