@@ -12,12 +12,16 @@ export class RemeneracaoStorageService {
   constructor(private remuneracaoDataservice: RemuneracaoDataserviceService) {}
 
   public getDadosRemuneracao(ano: String, mes: String) {
+    let result: any;
     if (this.verificaAtributo(ano, mes)) {
-      return this.getFromApi(ano, mes);
+      result = this.getFromApi(ano, mes);
     } else {
-      return this.remuneracao;
+      result = this.remuneracao;
     }
+    this.mes = mes;
+    this.ano = ano;
   }
+
   private getFromApi(mes: String, ano: String) {
     return this.remuneracaoDataservice
       .getDadosRemuneracao(mes, ano)

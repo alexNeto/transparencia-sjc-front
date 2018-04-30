@@ -7,14 +7,14 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class RemuneracaoDataserviceService {
-  url = '';
+  url = 'http://localhost:5000';
+
   constructor(private http: Http) {}
 
   public getDadosRemuneracao(
     mes: String,
     ano: String
   ): Observable<Remuneracao[]> {
-    const cpHeaders = new Headers({ 'Content-Type': 'application/json' });
     return this.http
       .get(this.url)
       .map(res => this.extractData)
