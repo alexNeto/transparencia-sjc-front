@@ -5,7 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterializeModule } from 'angular2-materialize';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 /**
  * Seervicos
@@ -25,6 +26,7 @@ import { FooterComponent } from './footer/footer.component';
  *  Modules
  */
 import { RemuneracaoCamaraSjcModule } from './remuneracao-camara-sjc/remuneracao-camara-sjc.module';
+import { HttpClient } from 'selenium-webdriver/http';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -50,9 +52,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     ),
-    HttpModule,
     BrowserModule,
-    MaterializeModule
+    MaterializeModule,
+    HttpClientModule
   ],
   providers: [CommonsService, CrawlerService, TabelaMockService],
   bootstrap: [AppComponent]

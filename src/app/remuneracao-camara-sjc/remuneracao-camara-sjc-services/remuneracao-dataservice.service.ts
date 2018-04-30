@@ -1,32 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptions } from '@angular/http';
 import { Remuneracao } from '../data-models/remuneracao';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class RemuneracaoDataserviceService {
-  url = 'http://localhost:5000';
+  url = 'http://localhost:5000/salario_camara_municipal';
 
-  constructor(private http: Http) {}
+  constructor(private http: HttpClient) {}
 
-  public getDadosRemuneracao(
-    mes: String,
-    ano: String
-  ): Observable<Remuneracao[]> {
-    return this.http
-      .get(this.url)
-      .map(res => this.extractData)
-      .catch(this.handleError);
-  }
-
-  private extractData(res: Response): Promise<any> {
-    return res.json();
-  }
-
-  private handleError(error: Response | any) {
-    console.error(error.message || error);
-    return Observable.throw(error.status);
+  public getData() {
+    return this.http.get(this.url);
   }
 }

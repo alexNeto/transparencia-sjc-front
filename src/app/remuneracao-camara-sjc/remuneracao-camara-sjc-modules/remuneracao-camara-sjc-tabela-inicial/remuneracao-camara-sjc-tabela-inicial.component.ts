@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TabelaMockService } from '../../../services/mock/tabela-mock.service';
-import { RemeneracaoStorageService } from '../../remuneracao-camara-sjc-services/remeneracao-storage.service';
+import { RemuneracaoDataserviceService } from '../../remuneracao-camara-sjc-services/remuneracao-dataservice.service';
+import { Remuneracao } from '../../data-models/remuneracao';
 
 @Component({
   selector: 'app-remuneracao-camara-sjc-tabela-inicial',
@@ -8,13 +9,25 @@ import { RemeneracaoStorageService } from '../../remuneracao-camara-sjc-services
   styleUrls: ['./remuneracao-camara-sjc-tabela-inicial.component.less']
 })
 export class RemuneracaoCamaraSjcTabelaInicialComponent implements OnInit {
-  funcionarios: Object;
   dadosIniciais: any;
-  constructor(private tabela: TabelaMockService, private dados: RemeneracaoStorageService) {}
+  funcionarios: any;
+  constructor(
+    private tabela: TabelaMockService,
+    private remuneracaoService: RemuneracaoDataserviceService
+  ) {}
 
   ngOnInit() {
-    this.funcionarios = this.tabela.getTabelaInicial();
-    this.dadosIniciais = this.dados.getDadosRemuneracao('Fevereiro', '2018');
+    this.getRemuneracao();
+    // this.funcionarios = this.tabela.getTabelaInicial();
   }
 
+  public getRemuneracao() {
+    this.remuneracaoService.getData().subscribe(
+      data => {
+        this.funcionarios = data;
+      },
+      err => console.error(err),
+      () => console.log('done loading foods')
+    );
+  }
 }

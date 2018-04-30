@@ -18,6 +18,7 @@ import { RemuneracaoCamaraSjcComponent } from './remuneracao-camara-sjc/remunera
 // tslint:disable-next-line:max-line-length
 import { RemuneracaoCamaraSjcTabelaInicialComponent } from './remuneracao-camara-sjc-modules/remuneracao-camara-sjc-tabela-inicial/remuneracao-camara-sjc-tabela-inicial.component';
 import { RemuneracaoCardComponent } from './remuneracao-card/remuneracao-card.component';
+import { RemuneracaoDataserviceService } from './remuneracao-camara-sjc-services/remuneracao-dataservice.service';
 
 const appRoutes: Routes = [
   {
@@ -45,6 +46,11 @@ const appRoutes: Routes = [
     RemuneracaoCamaraSjcTabelaInicialComponent
   ],
   exports: [],
-  providers: [CommonsService, CrawlerService, TabelaMockService]
+  providers: [
+    CommonsService,
+    CrawlerService,
+    TabelaMockService,
+    RemuneracaoDataserviceService
+  ]
 })
 export class RemuneracaoCamaraSjcModule {}
