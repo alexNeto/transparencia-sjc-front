@@ -14,20 +14,24 @@ import { CrawlerService } from '../services/crawler/crawler.service';
 /**
  * Componentes
  */
-import { RemuneracaoCamaraSjcComponent } from './remuneracao-camara-sjc/remuneracao-camara-sjc.component';
-// tslint:disable-next-line:max-line-length
-import { RemuneracaoCamaraSjcTabelaInicialComponent } from './remuneracao-camara-sjc-modules/remuneracao-camara-sjc-tabela-inicial/remuneracao-camara-sjc-tabela-inicial.component';
 import { RemuneracaoCardComponent } from './remuneracao-card/remuneracao-card.component';
-import { RemuneracaoDataserviceService } from './remuneracao-camara-sjc-services/remuneracao-dataservice.service';
+import { HomeComponent } from './home/home.component';
+import { RemuneracaoDataserviceService } from './services/remuneracao-dataservice.service';
+import { TabelaInicialComponent } from './modules/tabela-inicial/tabela-inicial.component';
+import { PorCargoComponent } from './modules/por-cargo/por-cargo.component';
 
 const appRoutes: Routes = [
   {
     path: 'remuneracao-camara',
-    component: RemuneracaoCamaraSjcComponent
+    component: HomeComponent
   },
   {
     path: 'remuneracao-camara/tabela-inicial',
-    component: RemuneracaoCamaraSjcTabelaInicialComponent
+    component: TabelaInicialComponent
+  },
+  {
+    path: 'remuneracao-camara/por-cargo',
+    component: PorCargoComponent
   }
 ];
 
@@ -41,9 +45,10 @@ const appRoutes: Routes = [
     MaterializeModule
   ],
   declarations: [
+    HomeComponent,
+    TabelaInicialComponent,
     RemuneracaoCardComponent,
-    RemuneracaoCamaraSjcComponent,
-    RemuneracaoCamaraSjcTabelaInicialComponent
+    PorCargoComponent
   ],
   exports: [],
   providers: [
