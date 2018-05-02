@@ -1,5 +1,5 @@
 <span>Selecione um Cargo</span>
-<select *ngFor="cargo in cargos">
+<select *ngFor="let cargo of cargos" ng-selected="[(cargo)]">
   <option>{{ cargo }}</option>
 </select>
 
@@ -8,7 +8,6 @@
   <thead>
     <tr>
       <th>Nome do Servidor</th>
-      <th>Cargo</th> <!-- returar depois-->
       <th>Salário Base</th>
       <th>Plano de Carreira </th>
       <th>Gratificações </th>
@@ -27,7 +26,6 @@
   <tbody>
     <tr *ngFor="let funcionario of funcionarios">
       <td>{{ funcionario.nome }}</td>
-      <td>{{ funcionario.cargo }}</td> <!--deixar em destaque-->
       <td>{{ funcionario.salario_base }}</td>
       <td>{{ funcionario.plano_carreira }}</td>
       <td>{{ funcionario.gratificacao }}</td>
